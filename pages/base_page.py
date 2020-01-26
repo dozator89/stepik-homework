@@ -11,14 +11,14 @@ class BasePage():
 
     def is_element_present(self, how, what):
         try:
-            "login" in self.browser.find_element(how, what)
+            self.browser.find_element(how, what)
         except (NoSuchElementException):
             return False
         return True
 
-    def is_current_url(self, url):
+    def is_current_url(self):
         try:
-            self.browser.current_url(url)
+            "login" in self.browser.current_url
         except ():
             return False
         return True
